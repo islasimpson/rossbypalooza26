@@ -15,6 +15,6 @@ For each model, there are mutiple systems.  For each system there is a common hi
 
 Finally, the systems are combined by taking the hindcast anomalies for the most recent system and combining that with all the relevant forecasts anomalies from each system.  Regridding to a common 1 degree grid is also done at this stage since not all systems for a given model have the same grid.
 
-- The sorting is done at `./processing/CDS/combine\_systems/combine_$model.ipynb`
-- Output is at `/glade/campaign/cgd/cas/islas/DATASETS/CDS/seasonal/combine\_systems/$model`
+- The sorting is done at `./processing/CDS/combine_systems/combine_$model.ipynb`
+- Output is at `/glade/campaign/cgd/cas/islas/DATASETS/CDS/seasonal/combine_systems/$model`
 
