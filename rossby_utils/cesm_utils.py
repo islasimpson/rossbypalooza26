@@ -24,7 +24,7 @@ def fix_cesm_time(dat):
     if 'time_bound' in dat.data_vars:
         timebndsvar='time_bound'
     elif 'time_bnds' in dat.data_vars:
-        timebndsvars='time_bnds'
+        timebndsvar='time_bnds'
     else:
         print('this code only works with time bounds variables time_bounds or time_bnds')
         
