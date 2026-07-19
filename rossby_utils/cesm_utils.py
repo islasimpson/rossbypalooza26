@@ -2,7 +2,7 @@
 import xarray as xr
 import numpy as np
 
-def round_lon_and_lats(dat):
+def round_lons_and_lats(dat):
     """
     Function for fixing tiny round-off level differences in the lon or lat variables
     """
