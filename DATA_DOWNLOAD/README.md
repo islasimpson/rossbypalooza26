@@ -10,7 +10,7 @@ Here's the process that was used for dealing with the seasonal predictions from 
 For each model, there are mutiple systems.  For each system there is a common hindcast period and then there are forecasts.  For some systems, there are lagged initialization dates which means that the time values for data for each member are not consistent.
 
 - Informationon the hindcast and forecast years for each system are in `./DATA_DOWNLOAD/system_year_info.yaml`
-- For each system, the members/dates are sorted and the anomalies from the lead dependent climatology are computed at `./processing/CDS/sort_and_remove_climo/*.ipynb.
+- For each system, the members/dates are sorted and the anomalies from the lead dependent climatology are computed at `./processing/CDS/sort_and_remove_climo/*.ipynb`.
 - This results in output located at `/glade/campaign/cgd/cas/islas/DATASETS/CDS/seasonal/$model/nc/`
 
 Finally, the systems are combined by taking the hindcast anomalies for the most recent system and combining that with all the relevant forecasts anomalies from each system.  Regridding to a common 1 degree grid is also done at this stage since not all systems for a given model have the same grid.
