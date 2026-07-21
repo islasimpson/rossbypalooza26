@@ -56,8 +56,8 @@ def eofcalc_pcnorm(dat, wtype='sqrtcoslat', neofs=1, timeaxis='time', lonneg=Non
 
 def eofcalc_eofnorm(dat, wtype='sqrtcoslat', neofs=1, timeaxis='time', lonneg=None, latneg=None):
     """ Perform EOF analysis across time for an array with lat and lon dimensions
-    Output is normalized such that the PC time series has unit variance 
-    and the EOF pattern is in the units of dat.
+    Output is normalized such that the EOF pattern has has unit variance 
+    and the PC timeseries is in the units of dat.
     Input: dat = array of the form (time,lat,lon) where ... represent the spatial dimensions
            w = If set to sqrtcoslat then sqrt(cos(lat)) weighting is used.
                      Otherwise, set this to an array of the form (lat,lon) that contains the 
@@ -65,8 +65,8 @@ def eofcalc_eofnorm(dat, wtype='sqrtcoslat', neofs=1, timeaxis='time', lonneg=No
            neofs = the number of EOFs to be calculated.
 
     Output: 
-           pcs = PC time series with unit standard deviation
-           eofs = EOF pattern with the same units as dat.  Note that this still includes
+           pcs = PC time series with the same units as dat 
+           eofs = EOF pattern normalized.  Note that this still includes
                   the sqrt(cos(lat))) weighting (I think - determined this by what is needed to 
                   project dat back onto the eof and get the same pc time series back).
     Isla (islas@ucar.edu) Sept 30th, 2021. 
@@ -106,15 +106,6 @@ def eofcalc_eofnorm(dat, wtype='sqrtcoslat', neofs=1, timeaxis='time', lonneg=No
             pcs = -1.*pcs
 
     return pcs, eofs
-
-
-
-
-
-
-
-
-
 
 def proj_onto_eof(dat, eof, w='sqrtcoslat'):
     """ project array dat onto the eof that has been obtained using "eofcalc_pcnorm".
